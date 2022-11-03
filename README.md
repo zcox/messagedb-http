@@ -5,8 +5,6 @@ Simple HTTP proxy for messagedb. Mostly an example of using messagedb4s with htt
     - GET
         - return all stream messages, in order
         - could take position, batchSize, condition query params too
-    - POST/PUT
-        - could use this to write new message to stream
     - /last
         - GET
             - returns the stream's last message
@@ -14,9 +12,19 @@ Simple HTTP proxy for messagedb. Mostly an example of using messagedb4s with htt
         - GET
             - returns the stream's first message
 
+/streams/{streamName}/messages/{eventId}
+    - PUT
+        - write new message to stream
+
 /categories/{categoryName}/messages
     - GET
         - return all category messages
         - query params for other params
-        - what about unbounded? keep http connection open, chunk new messages back to client
+
+/categories/{categoryName}/messages/unbounded
+    - GET
+        - return all category messages from global position zero
+        - returns all existing messages first
+        - leaves connection open, and returns new messages as they are added
+        - uses chunked encoding, each chunk is a json object and a newline
 ```
