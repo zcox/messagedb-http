@@ -1,5 +1,6 @@
 Simple HTTP proxy for messagedb. Mostly an example of using messagedb4s with http4s.
 
+```
 /streams/{streamName}/messages
     - GET
         - return all stream messages, in order
@@ -18,3 +19,4 @@ Simple HTTP proxy for messagedb. Mostly an example of using messagedb4s with htt
         - return all category messages
         - query params for other params
         - what about unbounded? keep http connection open, chunk new messages back to client
+```
