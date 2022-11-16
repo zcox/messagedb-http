@@ -1,4 +1,4 @@
-Simple HTTP proxy for messagedb. Mostly an example of using messagedb4s with http4s.
+Simple HTTP proxy for [messagedb](https://github.com/message-db/message-db). Mostly an example of using [messagedb4s](https://github.com/zcox/messagedb4s) with [http4s](https://http4s.org/).
 
 ```
 /streams/{streamName}/messages
